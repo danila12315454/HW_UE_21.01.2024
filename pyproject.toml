@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "cdll"
+version = "0.1.0"
+description = ""
+authors = ["danila12315454 <danilaprig@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.13.2"
+pytest = "^7.4.4"
+pytest-coverage = "^0.0"
+black = "^23.12.1"
+flake8 = "^7.0.0"
+pylint = "^3.0.3"
+mypy = "^1.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 79
+skip-string-normalization = true
+
+[tool.flake8]
+ban-todos = true
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers -W error"
+junit_family = "xunit2"
+xfail_strict = true
+testpaths = [
+    "test_circular_doubly_linked_list.py",
+]
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning"
+]
+
+[tool.mypy]
+strict = true
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 100
