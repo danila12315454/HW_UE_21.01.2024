@@ -1,4 +1,4 @@
-CODE_FOLDERS := circular_doubly_linked_list.py
+CODE_FOLDERS := src
 TEST_FOLDERS := test_circular_doubly_linked_list.py
 
 .PHONY: test lint install format
@@ -18,4 +18,4 @@ lint:
 	mypy $(CODE_FOLDERS) $(TEST_FOLDERS)
 
 test:
-	poetry run pytest --cov=src --cov-fail-under=100
+	poetry run pytest --cov=$(CODE_FOLDERS) --cov-fail-under=100
