@@ -5,7 +5,6 @@ TEST_FOLDERS := test_circular_doubly_linked_list.py
 
 install:
 	poetry install --no-root
-	echo Y | mypy --install-types
 
 format:
 	black .
